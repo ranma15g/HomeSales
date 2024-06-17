@@ -33,24 +33,30 @@ class Program {
         // We initialize a variable to catch the user input for their initial input    
         string initialInput = Console.ReadLine();
 
-        // The most important question in this loop because this actives the break in the loop
-        if (initialInput == "Z" || initialInput == "z") // If the user presses z
-            {   // Terminate this functions lifespan
-                break;
+        // We create a sentinel here
+        int stop_gap = 0;
+
+        // Now that we know it's not a number or a string check the actual initial
+        while (initialInput != "d" && initialInput != "D" && initialInput != "e" && initialInput != "E" && initialInput != "f" && initialInput != "F")
+            {   // We check to see if they want to break the program and see totals
+                if (initialInput == "Z" || initialInput == "z") // If the user enters Z or z
+                {   // Terminate this functions lifespan
+                    stop_gap = 1;
+                    break;
+                }
+    
+                // They did not enter the correct initial
+                Console.WriteLine ("Error, Invalid Sales Person, please try again.");
+                // Ask them for valid input again
+                initialInput = Console.ReadLine();
             }
 
-        // This is where we set up the conditions to make sure they did in fact enter a valid initial
-        while (initialInput.Length > 1 || double.TryParse(initialInput, out double numbTest) == true)
-        // while they enter a string or a number 
-            {   // Tell them no soup for you!
-                Console.WriteLine ("I am so sorry, try again.");
-                // Ask them for vald input
-                initialInput = Console.ReadLine();
-            } 
+
+        if (stop_gap == 1) // If they want to stop the program
+            { 
+                break; // end the program and get results
+            }
         
-
-
-              
         // Once they enter a correct value of an iniital
         initialList.Add(initialInput); // They are added to a list of initials 
                                            // for this programs life cycle
