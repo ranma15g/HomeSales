@@ -36,7 +36,7 @@ class Program {
         // We create a sentinel here
         int stop_gap = 0;
 
-        // Now that we know it's not a number or a string check the actual initial
+        // If we do not enter the correct initial character
         while (initialInput != "d" && initialInput != "D" && initialInput != "e" && initialInput != "E" && initialInput != "f" && initialInput != "F")
             {   // We check to see if they want to break the program and see totals
                 if (initialInput == "Z" || initialInput == "z") // If the user enters Z or z
