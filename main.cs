@@ -46,7 +46,7 @@ class Program {
                 }
     
                 // They did not enter the correct initial
-                Console.WriteLine ("Error, Invalid Sales Person, please try again.");
+                Console.WriteLine ("intermediate output: Error, invalid sales person selected, please try again.");
                 // Ask them for valid input again
                 initialInput = Console.ReadLine();
             }
